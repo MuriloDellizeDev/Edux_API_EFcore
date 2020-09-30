@@ -25,9 +25,9 @@ namespace Edux_Api_EFcore.Controllers
 
 
         /// <summary>
-        /// 
+        /// Lista com todos os Objetivos
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Mostra todos os ObjetivosAlunos cadastradas</returns>
         // GET: api/<ObjetivoAlunoController>
         [Authorize(Roles = "Aluno,Professor")]
         [HttpGet]
@@ -56,10 +56,10 @@ namespace Edux_Api_EFcore.Controllers
 
 
         /// <summary>
-        /// 
+        /// Mostra um único ObjetivoAluno especificado pelo seu ID
         /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
+        /// <param name="id">ID do ObjetivoAluno</param>
+        /// <returns>Um ObjetivoAluno</returns>
         // GET api/<ObjetivoAlunoController>/buscar/id/5
         [Authorize(Roles = "Professor")]
         [HttpGet("buscar/id/{id}")]
@@ -82,10 +82,10 @@ namespace Edux_Api_EFcore.Controllers
 
 
         /// <summary>
-        /// 
+        /// Mostra um único ObjetivoAluno especificado pelo seu IDALUNO
         /// </summary>
-        /// <param name="idAluno"></param>
-        /// <returns></returns>
+        /// <param name="idAluno">Objeto idAluno</param>
+        /// <returns>Um ObjetivoAluno</returns>
         // GET api/<ObjetivoAlunoController>/buscar/id/5
         [Authorize(Roles = "Aluno,Professor")]
         [HttpGet("buscar/por_aluno/{idAluno}")]
@@ -113,10 +113,10 @@ namespace Edux_Api_EFcore.Controllers
 
 
         /// <summary>
-        /// 
+        /// Cadastra um novo ObjetivoAluno
         /// </summary>
-        /// <param name="objetivoAluno"></param>
-        /// <returns></returns>
+        /// <param name="objetivoAluno">Objeto objetivoAluno</param>
+        /// <returns>ObejtivoAluno Cadastrado</returns>
         // POST api/<ObjetivoAlunoController>
         [Authorize(Roles = "Professor")]
         [HttpPost]
@@ -136,10 +136,10 @@ namespace Edux_Api_EFcore.Controllers
 
 
         /// <summary>
-        /// 
+        /// Altera um determinado ObjetivoAluno
         /// </summary>
-        /// <param name="objetivoAluno"></param>
-        /// <returns></returns>
+        /// <param name="objetivoAluno">Objeto objetivoAluno com as alterações</param>
+        /// <returns>Informações alteradas do ObjetivoAluno</returns>
         // PUT api/<ObjetivoAlunoController>
         [Authorize(Roles = "Professor")]
         [HttpPut]
@@ -159,10 +159,10 @@ namespace Edux_Api_EFcore.Controllers
 
 
         /// <summary>
-        /// 
+        /// Exclui um determinado ObjetivoAluno
         /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
+        /// <param name="id">Id do ObjetivoAluno a ser excluído</param>
+        /// <returns>StatusCodes e </returns>
         // DELETE api/<ObjetivoAlunoController>/5
         [Authorize(Roles = "Professor")]
         [HttpDelete("{id}")]

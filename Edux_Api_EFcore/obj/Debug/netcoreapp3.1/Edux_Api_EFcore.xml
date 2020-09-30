@@ -204,51 +204,51 @@
         </member>
         <member name="M:Edux_Api_EFcore.Controllers.LoginController.Login(Edux_Api_EFcore.Domains.Usuario)">
             <summary>
-            Cadastra um novo Login
+            Faz o login do usuário
             </summary>
-            <param name="login"></param>
-            <returns>Login cadastrado</returns>
+            <param name="login">Dados do usuário para fazer o login</param>
+            <returns>Autorizado ou não</returns>
         </member>
         <member name="M:Edux_Api_EFcore.Controllers.ObjetivoAlunoController.Get">
             <summary>
-            
+            Lista com todos os Objetivos
             </summary>
-            <returns></returns>
+            <returns>Mostra todos os ObjetivosAlunos cadastradas</returns>
         </member>
         <member name="M:Edux_Api_EFcore.Controllers.ObjetivoAlunoController.Get(System.Guid)">
             <summary>
-            
+            Mostra um único ObjetivoAluno especificado pelo seu ID
             </summary>
-            <param name="id"></param>
-            <returns></returns>
+            <param name="id">ID do ObjetivoAluno</param>
+            <returns>Um ObjetivoAluno</returns>
         </member>
         <member name="M:Edux_Api_EFcore.Controllers.ObjetivoAlunoController.GetPorAluno(System.Guid)">
             <summary>
-            
+            Mostra um único ObjetivoAluno especificado pelo seu IDALUNO
             </summary>
-            <param name="idAluno"></param>
-            <returns></returns>
+            <param name="idAluno">Objeto idAluno</param>
+            <returns>Um ObjetivoAluno</returns>
         </member>
         <member name="M:Edux_Api_EFcore.Controllers.ObjetivoAlunoController.Post(Edux_Api_EFcore.Domains.ObjetivoAluno)">
             <summary>
-            
+            Cadastra um novo ObjetivoAluno
             </summary>
-            <param name="objetivoAluno"></param>
-            <returns></returns>
+            <param name="objetivoAluno">Objeto objetivoAluno</param>
+            <returns>ObejtivoAluno Cadastrado</returns>
         </member>
         <member name="M:Edux_Api_EFcore.Controllers.ObjetivoAlunoController.Put(Edux_Api_EFcore.Domains.ObjetivoAluno)">
             <summary>
-            
+            Altera um determinado ObjetivoAluno
             </summary>
-            <param name="objetivoAluno"></param>
-            <returns></returns>
+            <param name="objetivoAluno">Objeto objetivoAluno com as alterações</param>
+            <returns>Informações alteradas do ObjetivoAluno</returns>
         </member>
         <member name="M:Edux_Api_EFcore.Controllers.ObjetivoAlunoController.Delete(System.Guid)">
             <summary>
-            
+            Exclui um determinado ObjetivoAluno
             </summary>
-            <param name="id"></param>
-            <returns></returns>
+            <param name="id">Id do ObjetivoAluno a ser excluído</param>
+            <returns>StatusCodes e </returns>
         </member>
         <member name="M:Edux_Api_EFcore.Controllers.ObjetivoController.Get">
             <summary>

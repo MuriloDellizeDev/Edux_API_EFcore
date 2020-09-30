@@ -65,10 +65,10 @@ namespace Edux_Api_EFcore.Controllers
 
 
         /// <summary>
-        /// Cadastra um novo Login
+        /// Faz o login do usuário
         /// </summary>
-        /// <param name="login"></param>
-        /// <returns>Login cadastrado</returns>
+        /// <param name="login">Dados do usuário para fazer o login</param>
+        /// <returns>Autorizado ou não</returns>
         [AllowAnonymous]
        [HttpPost]
        public IActionResult Login([FromBody] Usuario login)

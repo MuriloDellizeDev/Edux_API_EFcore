@@ -68,8 +68,7 @@ namespace Edux_Api_EFcore.Repositories
         {
             try
             {
-                if(objetivoAluno.Nota != null)
-                    objetivoAluno.DataAlcancado = DateTime.Now;
+                objetivoAluno.DataAlcancado = DateTime.Now;
                 _ctx.ObjetivosAlunos.Add(objetivoAluno);
                 _ctx.SaveChanges();
             }
