@@ -27,7 +27,10 @@ namespace Edux_Api_EFcore.Controllers
         }
 
 
-
+        /// <summary>
+        /// Mostra todas as Curtidas cadastradas
+        /// </summary>
+        /// <returns>Lista com todos as Curtidas</returns>
         [Authorize(Roles = "Aluno,Professor")]
         // GET: api/<CurtidaController>
         [HttpGet]
@@ -59,10 +62,14 @@ namespace Edux_Api_EFcore.Controllers
         }
 
 
-
+        /// <summary>
+        /// Mostra uma única Curtida especificado pelo seu ID
+        /// </summary>
+        /// <param name="id">ID da Curtida</param>
+        /// <returns>Uma Curtida</returns>
         [Authorize(Roles = "Professor")]
         // GET api/<CurtidaController>/5
-        [HttpGet("{id}")]
+        [HttpGet("buscar/id/{id}")]
         public IActionResult Get(Guid id)
         {
             try
@@ -83,7 +90,11 @@ namespace Edux_Api_EFcore.Controllers
         }
 
 
-
+        /// <summary>
+        /// Cadastra uma nova Curtida
+        /// </summary>
+        /// <param name="curtida">Objeto Curtida</param>
+        /// <returns>Curtida Cadastrado</returns>
         [Authorize(Roles = "Aluno,Professor")]
         // POST api/<CurtidaController>
         [HttpPost]
@@ -106,9 +117,13 @@ namespace Edux_Api_EFcore.Controllers
             }
 
         }
-            
 
 
+        /// <summary>
+        /// Altera um determinado Curtida
+        /// </summary>
+        /// <param name="curtida">Objeto Curtida com as alterações</param>
+        /// <returns>Informações alteradas do Curtida </returns>
         [Authorize(Roles = "Aluno,Professor")]
         // PUT api/<CurtidaController>/5
         [HttpPut("{id}")]
@@ -130,7 +145,11 @@ namespace Edux_Api_EFcore.Controllers
         }
 
 
-
+        /// <summary>
+        /// Excluí um determinada Curtida
+        /// </summary>
+        /// <param name="id">ID da Curtida</param>
+        /// <returns>ID excluído</returns>
         [Authorize(Roles = "Aluno,Professor")]
         // DELETE api/<CurtidaController>/5
         [HttpDelete("{id}")]

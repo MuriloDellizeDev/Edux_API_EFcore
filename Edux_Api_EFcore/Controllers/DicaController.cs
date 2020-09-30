@@ -24,6 +24,10 @@ namespace Edux_Api_EFcore.Controllers
             _dicaRepository = new DicaRepository();
         }
 
+        /// <summary>
+        /// Mostra todas as Dicas cadastradas
+        /// </summary>
+        /// <returns>Lista com todos as Dicas</returns>
         [Authorize(Roles = "Aluno,Professor")]
         // GET: api/<DicaController>
         [HttpGet]
@@ -50,6 +54,11 @@ namespace Edux_Api_EFcore.Controllers
         }
 
 
+        /// <summary>
+        /// Mostra uma única Dica especificado pelo seu ID
+        /// </summary>
+        /// <param name="id">ID da Dica</param>
+        /// <returns>Uma Dica</returns>
         [Authorize(Roles = "Professor")]
         // GET api/<DicaController>/buscar/id/5
         [HttpGet("buscar/id/{id}")]
@@ -71,7 +80,11 @@ namespace Edux_Api_EFcore.Controllers
         }
 
 
-
+        /// <summary>
+        /// Mostra uma única Categoria especificado por uma PALAVRA CHAVE
+        /// </summary>
+        /// <param name="palavraChave">Objeto palavraChave</param>
+        /// <returns>Uma Dica</returns>
         [Authorize(Roles = "Aluno,Professor")]
         // GET: api/<DicaController>/buscar/termo/desenvolvimento
         [HttpGet("buscar/termo/{termo}")]
@@ -98,7 +111,11 @@ namespace Edux_Api_EFcore.Controllers
         }
 
 
-
+        /// <summary>
+        /// Cadastra uma nova Dica
+        /// </summary>
+        /// <param name="dica">Objeto Dica</param>
+        /// <returns>Categoria Dica</returns>
         [Authorize(Roles = "Professor")]
         // POST api/<DicaController>
         [HttpPost]
@@ -123,6 +140,11 @@ namespace Edux_Api_EFcore.Controllers
         }
 
 
+        /// <summary>
+        /// Altera uma determinada Dica
+        /// </summary>
+        /// <param name="dica">Objeto Dica com as alterações</param>
+        /// <returns>Informações alterada da Dica </returns>
         [Authorize(Roles = "Professor")]
         // PUT api/<DicaController>
         [HttpPut]
@@ -140,7 +162,11 @@ namespace Edux_Api_EFcore.Controllers
             }
         }
 
-
+        /// <summary>
+        /// Excluí uma determinada Dica
+        /// </summary>
+        /// <param name="id">ID da Dica</param>
+        /// <returns>ID Excluído</returns>
         [Authorize(Roles = "Professor")]
         // DELETE api/<DicaController>/5
         [HttpDelete("{id}")]
@@ -159,7 +185,7 @@ namespace Edux_Api_EFcore.Controllers
             catch (Exception ex)
             {
                 return BadRequest(ex.Message + ". Envie um email para a nossa equipe de suporte: edux.suport@gmail.com");
-            }
+           }
         }
     }
 }

@@ -29,7 +29,10 @@ namespace Edux_Api_EFcore.Controllers
 
         }
 
-
+        /// <summary>
+        /// Mostra todas as Categorias cadastradas
+        /// </summary>
+        /// <returns>Lista com todos os produtos</returns>
         [Authorize(Roles = "Aluno,Professor")]
         // GET: api/<CategoriaController>
         [HttpGet]
@@ -62,9 +65,15 @@ namespace Edux_Api_EFcore.Controllers
         }
 
 
+
+        /// <summary>
+        /// Mostra uma única Categoria especificado pelo seu ID
+        /// </summary>
+        /// <param name="Id">ID da Categoria</param>
+        /// <returns>Uma Categoria</returns>
         [Authorize(Roles = "Professor")]
         // GET api/<CategoriaController>/listar/id = 2
-        [HttpGet("{id}")]
+        [HttpGet("buscar/id/{id}")]
         public IActionResult Get(Guid Id)
         {
             try
@@ -87,9 +96,15 @@ namespace Edux_Api_EFcore.Controllers
         }
 
 
+       
+        /// <summary>
+        /// Mostra uma única Categoria especificado pelo seu TIPO
+        /// </summary>
+        /// <param name="tipo">Objeto Tipo</param>
+        /// <returns>Uma Categoria</returns>
         [Authorize(Roles = "Aluno,Professor")]
         // GET api/<CategoriaController>/listar/tipo = critico
-        [HttpGet("{id}")]
+        [HttpGet("buscar/categoria/{categoria}")]
         public IActionResult Get(string tipo)
         {
 
@@ -119,6 +134,12 @@ namespace Edux_Api_EFcore.Controllers
         }
 
 
+
+        /// <summary>
+        /// Cadastra uma nova Categoria
+        /// </summary>
+        /// <param name="categoria">Objeto Categoria</param>
+        /// <returns>Categoria cadastrada</returns>
         [Authorize(Roles = "Professor")]
         // POST api/<CategoriaController>
         [HttpPost]
@@ -144,6 +165,12 @@ namespace Edux_Api_EFcore.Controllers
         }
 
 
+
+        /// <summary>
+        /// Altera uma determinada Categoria
+        /// </summary>
+        /// <param name="categoria">Objeto Categoria com as alterações</param>
+        /// <returns>Informações alterada da Categoria </returns>
         [Authorize(Roles = "Professor")]
         // PUT api/<CategoriaController>/5
         [HttpPut("{id}")]
@@ -164,7 +191,12 @@ namespace Edux_Api_EFcore.Controllers
 
         }
 
-
+      
+        /// <summary>
+        /// Excluí uma determinada Categoria
+        /// </summary>
+        /// <param name="Id">ID da Categoria</param>
+        /// <returns>ID excluído</returns>
         [Authorize(Roles = "Professor")]
         // DELETE api/<CategoriaController>/5
         [HttpDelete("{id}")]

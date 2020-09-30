@@ -24,6 +24,10 @@ namespace Edux_Api_EFcore.Controllers
             _cursoRepository = new CursoRepository();
         }
 
+        /// <summary>
+        /// Mostra todos os Cursos cadastradas
+        /// </summary>
+        /// <returns>Lista com todos os Cursos</returns>
         [Authorize(Roles = "Aluno,Professor")]
         // GET: api/<CursoController>
         [HttpGet]
@@ -50,6 +54,11 @@ namespace Edux_Api_EFcore.Controllers
         }
 
 
+        /// <summary>
+        /// Mostra um único Curso especificado pelo seu ID
+        /// </summary>
+        /// <param name="id">ID do Curso</param>
+        /// <returns>Um Curso</returns>
         [Authorize(Roles = "Professor")]
         // GET api/<CursoController>/buscar/id/5
         [HttpGet("buscar/id/{id}")]
@@ -71,6 +80,11 @@ namespace Edux_Api_EFcore.Controllers
         }
 
 
+        /// <summary>
+        ///  Mostra um único Curso especificado pelo seu TITULO
+        /// </summary>
+        /// <param name="titulo">Objeto Titulo</param>
+        /// <returns>Um Curso</returns>
         [Authorize(Roles = "Aluno,Professor")]
         // GET api/<CursoController>/buscar/titulo/DesenvolvimentoDeSistemas
         [HttpGet("buscar/titulo/{titulo}")]
@@ -97,6 +111,11 @@ namespace Edux_Api_EFcore.Controllers
         }
 
 
+        /// <summary>
+        /// Cadastra um novo Curso
+        /// </summary>
+        /// <param name="curso">Objeto Curso</param>
+        /// <returns>Curso Cadastrado</returns>
         [Authorize(Roles = "Professor")]
         // POST api/<CursoController>
         [HttpPost]
@@ -114,6 +133,13 @@ namespace Edux_Api_EFcore.Controllers
             }
         }
 
+
+
+        /// <summary>
+        /// Altera um determinado Curso
+        /// </summary>
+        /// <param name="curso">Objeto curso com as alterações</param>
+        /// <returns>Informações alteradas do Curso </returns>
         [Authorize(Roles = "Professor")]
         // PUT api/<CursoController>
         [HttpPut]
@@ -131,6 +157,12 @@ namespace Edux_Api_EFcore.Controllers
             }
         }
 
+
+        /// <summary>
+        /// Excluí um determinado Curso
+        /// </summary>
+        /// <param name="id">ID do Curso</param>
+        /// <returns>ID excluído</returns>
         [Authorize(Roles = "Professor")]
         // DELETE api/<CursoController>/5
         [HttpDelete("{id}")]

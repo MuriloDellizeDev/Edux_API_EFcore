@@ -23,6 +23,11 @@ namespace Edux_Api_EFcore.Controllers
             _turmaRepository = new TurmaRepository();
         }
 
+
+        /// <summary>
+        /// Mostra todas as Turmas cadastradas
+        /// </summary>
+        /// <returns>Lista com todas as Turmas</returns>
         [Authorize(Roles = "Aluno,Professor")]
         // GET: api/<TurmaController>
         [HttpGet]
@@ -48,6 +53,12 @@ namespace Edux_Api_EFcore.Controllers
             }
         }
 
+
+        /// <summary>
+        /// Mostra uma única Turma especificado pelo seu ID
+        /// </summary>
+        /// <param name="id">ID da Turma</param>
+        /// <returns>Uma Turma</returns>
         [Authorize(Roles = "Professor")]
         // GET api/<TurmaController>/buscar/id/5
         [HttpGet("buscar/id/{id}")]
@@ -69,6 +80,11 @@ namespace Edux_Api_EFcore.Controllers
         }
 
 
+        /// <summary>
+        /// Mostra um único Objetivo especificado pelo seu NOME
+        /// </summary>
+        /// <param name="nome">Objeto nome</param>
+        /// <returns>Uma Turma</returns>
         [Authorize(Roles = "Aluno,Professor")]
         // GET: api/<TurmaController>/buscar/nome/1DT
         [HttpGet("buscar/nome/{nome}")]
@@ -95,10 +111,17 @@ namespace Edux_Api_EFcore.Controllers
         }
 
 
+        /// <summary>
+        /// Cadastra uma nova Turma
+        /// </summary>
+        /// <param name="turma">Objeto turma</param>
+        /// <param name="professores">Objeto professores</param>
+        /// <param name="alunos">Objeto alunos</param>
+        /// <returns>Turma Cadastrada</returns>
         [Authorize(Roles = "Professor")]
         // POST api/<TurmaController>
         [HttpPost]
-        public IActionResult Post([FromBody] Turma turma, [FromBody] List<ProfessorTurma> professores, [FromBody] List<AlunoTurma> alunos)
+        public IActionResult Post([FromForm] Turma turma, [FromForm] List<ProfessorTurma> professores, [FromForm] List<AlunoTurma> alunos)
         {
             try
             {
@@ -113,10 +136,17 @@ namespace Edux_Api_EFcore.Controllers
         }
 
 
+        /// <summary>
+        ///  Altera uma determinada Tuma
+        /// </summary>
+        /// <param name="turma">Objeto turma com as alterações</param>
+        /// <param name="professores">Objeto professores com as alterações</param>
+        /// <param name="alunos">Objeto alunos com as alterações</param>
+        /// <returns>Informações alteradas da Turma</returns>
         [Authorize(Roles = "Professor")]
         // PUT api/<TurmaController>
         [HttpPut]
-        public IActionResult Put([FromBody] Turma turma, List<ProfessorTurma> professores, List<AlunoTurma> alunos)
+        public IActionResult Put([FromForm] Turma turma, [FromForm] List<ProfessorTurma> professores, [FromForm] List<AlunoTurma> alunos) 
         {
             try
             {
@@ -131,6 +161,11 @@ namespace Edux_Api_EFcore.Controllers
         }
 
 
+        /// <summary>
+        /// Excluí uma determinada Turma
+        /// </summary>
+        /// <param name="id">ID da Turma</param>
+        /// <returns>ID excluído</returns>
         [Authorize(Roles = "Professor")]
         // DELETE api/<TurmaController>/5
         [HttpDelete("{id}")]

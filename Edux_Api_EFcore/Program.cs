@@ -9,6 +9,8 @@ using Microsoft.Extensions.Logging;
 
 namespace Edux_Api_EFcore
 {
+
+#pragma warning disable CS1591
     public class Program
     {
         public static void Main(string[] args)
@@ -23,4 +25,6 @@ namespace Edux_Api_EFcore
                     webBuilder.UseStartup<Startup>();
                 });
     }
+
+#pragma warning restore CS1591
 }

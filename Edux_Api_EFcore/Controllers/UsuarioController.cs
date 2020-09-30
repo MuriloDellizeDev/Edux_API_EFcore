@@ -23,7 +23,10 @@ namespace Edux_Api_EFcore.Controllers
             _usuarioRepository = new UsuarioRepository();
         }
 
-
+        /// <summary>
+        /// Mostra todos os Usuários cadastradas
+        /// </summary>
+        /// <returns>Lista com todos os Usuários</returns>
         [Authorize(Roles = "Aluno,Professor")]
         // GET: api/<UsuarioController>
         [HttpGet]
@@ -44,9 +47,15 @@ namespace Edux_Api_EFcore.Controllers
             }
         }
 
+
+        /// <summary>
+        /// Mostra um único Usuário especificado pelo seu ID
+        /// </summary>
+        /// <param name="id">ID do Usuário</param>
+        /// <returns>Um Usuário</returns>
         [Authorize(Roles = "Professor")]
         // GET api/<UsuarioController>/5
-        [HttpGet("{id}")]
+        [HttpGet("buscar/id/{id}")]
         public IActionResult Get(Guid id)
         {
             try
@@ -65,9 +74,14 @@ namespace Edux_Api_EFcore.Controllers
         }
 
 
+        /// <summary>
+        /// Mostra um único Usuário especificado pelo seu NOME
+        /// </summary>
+        /// <param name="nome">Objeto Nome</param>
+        /// <returns>Um Usuário</returns>
         [Authorize(Roles = "Aluno,Professor")]
         // GET api/<ObjetivoController>/
-        [HttpGet("{id}")]
+        [HttpGet("buscar/nome/{nome}")]
         public IActionResult Get(string nome)
         {
             try
@@ -98,6 +112,11 @@ namespace Edux_Api_EFcore.Controllers
         }
 
 
+        /// <summary>
+        /// Cadastra um novo Usuário
+        /// </summary>
+        /// <param name="usuario">Objeto Usuário</param>
+        /// <returns>Usuário Cadastrado</returns>
         [Authorize(Roles = "Professor")]
         // POST api/<UsuarioController>
         [HttpPost]
@@ -116,6 +135,11 @@ namespace Edux_Api_EFcore.Controllers
         }
 
 
+        /// <summary>
+        /// Altera um determinado Usuário
+        /// </summary>
+        /// <param name="usuario">Objeto usuario com as alterações</param>
+        /// <returns>Informações alteradas do Usuário</returns>
         [Authorize(Roles = "Professor")]
         // PUT api/<UsuarioController>/5
         [HttpPut("{id}")]
@@ -134,6 +158,11 @@ namespace Edux_Api_EFcore.Controllers
         }
 
 
+        /// <summary>
+        /// Excluí um determinado Usuário
+        /// </summary>
+        /// <param name="id">ID do Usuário</param>
+        /// <returns>ID excluído</returns>
         [Authorize(Roles = "Professor")]
         // DELETE api/<UsuarioController>/5
         [HttpDelete("{id}")]

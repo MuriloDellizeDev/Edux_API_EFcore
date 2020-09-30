@@ -23,6 +23,11 @@ namespace Edux_Api_EFcore.Controllers
             _objetivoAlunoRepository = new ObjetivoAlunoRepository();
         }
 
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         // GET: api/<ObjetivoAlunoController>
         [Authorize(Roles = "Aluno,Professor")]
         [HttpGet]
@@ -49,6 +54,12 @@ namespace Edux_Api_EFcore.Controllers
         }
 
 
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         // GET api/<ObjetivoAlunoController>/buscar/id/5
         [Authorize(Roles = "Professor")]
         [HttpGet("buscar/id/{id}")]
@@ -69,6 +80,12 @@ namespace Edux_Api_EFcore.Controllers
             }
         }
 
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="idAluno"></param>
+        /// <returns></returns>
         // GET api/<ObjetivoAlunoController>/buscar/id/5
         [Authorize(Roles = "Aluno,Professor")]
         [HttpGet("buscar/por_aluno/{idAluno}")]
@@ -94,6 +111,12 @@ namespace Edux_Api_EFcore.Controllers
             }
         }
 
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="objetivoAluno"></param>
+        /// <returns></returns>
         // POST api/<ObjetivoAlunoController>
         [Authorize(Roles = "Professor")]
         [HttpPost]
@@ -111,6 +134,12 @@ namespace Edux_Api_EFcore.Controllers
             }
         }
 
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="objetivoAluno"></param>
+        /// <returns></returns>
         // PUT api/<ObjetivoAlunoController>
         [Authorize(Roles = "Professor")]
         [HttpPut]
@@ -128,6 +157,12 @@ namespace Edux_Api_EFcore.Controllers
             }
         }
 
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         // DELETE api/<ObjetivoAlunoController>/5
         [Authorize(Roles = "Professor")]
         [HttpDelete("{id}")]

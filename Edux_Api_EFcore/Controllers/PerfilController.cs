@@ -23,7 +23,10 @@ namespace Edux_Api_EFcore.Controllers
             _perfilRepository = new PerfilRepository();
         }
 
-
+        /// <summary>
+        /// Mostra todos os Perfis cadastradas
+        /// </summary>
+        /// <returns>Lista com todos os Perfis</returns>
         [Authorize(Roles = "Professor")]
         // GET: api/<PerfilController>
         [HttpGet]
@@ -45,9 +48,14 @@ namespace Edux_Api_EFcore.Controllers
         }
 
 
+        /// <summary>
+        /// Mostra um único Perfil especificado pelo seu ID
+        /// </summary>
+        /// <param name="id">ID do Perfil</param>
+        /// <returns>Um Perfil</returns>
         [Authorize(Roles = "Professor")]
         // GET api/<PerfilController>/5
-        [HttpGet("{id}")]
+        [HttpGet("buscar/id/{id}")]
         public IActionResult Get(Guid id)
         {
             try
@@ -66,6 +74,11 @@ namespace Edux_Api_EFcore.Controllers
         }
 
 
+        /// <summary>
+        ///  Cadastra um novo Perfil
+        /// </summary>
+        /// <param name="perfil">Objeto perfil</param>
+        /// <returns>Perfil Cadastrado</returns>
         [Authorize(Roles = "Professor")]
         // POST api/<PerfilController>
         [HttpPost]
@@ -84,6 +97,11 @@ namespace Edux_Api_EFcore.Controllers
         }
 
 
+        /// <summary>
+        /// Altera um determinado Perfil
+        /// </summary>
+        /// <param name="perfil">Objeto Perfil com as alterações</param>
+        /// <returns>Informações alteradas do Perfil</returns>
         [Authorize(Roles = "Professor")]
         // PUT api/<PerfilController>/5
         [HttpPut("{id}")]
@@ -102,6 +120,11 @@ namespace Edux_Api_EFcore.Controllers
         }
 
 
+        /// <summary>
+        /// Excluí um determinado Perfil
+        /// </summary>
+        /// <param name="id">ID do Perfil</param>
+        /// <returns>ID excluído</returns>
         [Authorize(Roles = "Professor")]
         // DELETE api/<PerfilController>/5
         [HttpDelete("{id}")]

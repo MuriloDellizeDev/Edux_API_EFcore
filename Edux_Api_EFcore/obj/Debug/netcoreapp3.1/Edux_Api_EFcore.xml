@@ -1,0 +1,415 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Edux_Api_EFcore</name>
+    </assembly>
+    <members>
+        <member name="M:Edux_Api_EFcore.Controllers.CategoriaController.Get">
+            <summary>
+            Mostra todas as Categorias cadastradas
+            </summary>
+            <returns>Lista com todos os produtos</returns>
+        </member>
+        <member name="M:Edux_Api_EFcore.Controllers.CategoriaController.Get(System.Guid)">
+            <summary>
+            Mostra uma única Categoria especificado pelo seu ID
+            </summary>
+            <param name="Id">ID da Categoria</param>
+            <returns>Uma Categoria</returns>
+        </member>
+        <member name="M:Edux_Api_EFcore.Controllers.CategoriaController.Get(System.String)">
+            <summary>
+            Mostra uma única Categoria especificado pelo seu TIPO
+            </summary>
+            <param name="tipo">Objeto Tipo</param>
+            <returns>Uma Categoria</returns>
+        </member>
+        <member name="M:Edux_Api_EFcore.Controllers.CategoriaController.Post(Edux_Api_EFcore.Domains.Categoria)">
+            <summary>
+            Cadastra uma nova Categoria
+            </summary>
+            <param name="categoria">Objeto Categoria</param>
+            <returns>Categoria cadastrada</returns>
+        </member>
+        <member name="M:Edux_Api_EFcore.Controllers.CategoriaController.Put(Edux_Api_EFcore.Domains.Categoria)">
+            <summary>
+            Altera uma determinada Categoria
+            </summary>
+            <param name="categoria">Objeto Categoria com as alterações</param>
+            <returns>Informações alterada da Categoria </returns>
+        </member>
+        <member name="M:Edux_Api_EFcore.Controllers.CategoriaController.Delete(System.Guid)">
+            <summary>
+            Excluí uma determinada Categoria
+            </summary>
+            <param name="Id">ID da Categoria</param>
+            <returns>ID excluído</returns>
+        </member>
+        <member name="M:Edux_Api_EFcore.Controllers.CursoController.GetCurso">
+            <summary>
+            Mostra todos os Cursos cadastradas
+            </summary>
+            <returns>Lista com todos os Cursos</returns>
+        </member>
+        <member name="M:Edux_Api_EFcore.Controllers.CursoController.GetCurso(System.Guid)">
+            <summary>
+            Mostra um único Curso especificado pelo seu ID
+            </summary>
+            <param name="id">ID do Curso</param>
+            <returns>Um Curso</returns>
+        </member>
+        <member name="M:Edux_Api_EFcore.Controllers.CursoController.GetCurso(System.String)">
+            <summary>
+             Mostra um único Curso especificado pelo seu TITULO
+            </summary>
+            <param name="titulo">Objeto Titulo</param>
+            <returns>Um Curso</returns>
+        </member>
+        <member name="M:Edux_Api_EFcore.Controllers.CursoController.PostCurso(Edux_Api_EFcore.Domains.Curso)">
+            <summary>
+            Cadastra um novo Curso
+            </summary>
+            <param name="curso">Objeto Curso</param>
+            <returns>Curso Cadastrado</returns>
+        </member>
+        <member name="M:Edux_Api_EFcore.Controllers.CursoController.PutCurso(Edux_Api_EFcore.Domains.Curso)">
+            <summary>
+            Altera um determinado Curso
+            </summary>
+            <param name="curso">Objeto curso com as alterações</param>
+            <returns>Informações alteradas do Curso </returns>
+        </member>
+        <member name="M:Edux_Api_EFcore.Controllers.CursoController.DeleteCurso(System.Guid)">
+            <summary>
+            Excluí um determinado Curso
+            </summary>
+            <param name="id">ID do Curso</param>
+            <returns>ID excluído</returns>
+        </member>
+        <member name="M:Edux_Api_EFcore.Controllers.CurtidaController.Get">
+            <summary>
+            Mostra todas as Curtidas cadastradas
+            </summary>
+            <returns>Lista com todos as Curtidas</returns>
+        </member>
+        <member name="M:Edux_Api_EFcore.Controllers.CurtidaController.Get(System.Guid)">
+            <summary>
+            Mostra uma única Curtida especificado pelo seu ID
+            </summary>
+            <param name="id">ID da Curtida</param>
+            <returns>Uma Curtida</returns>
+        </member>
+        <member name="M:Edux_Api_EFcore.Controllers.CurtidaController.Post(Edux_Api_EFcore.Domains.Curtida)">
+            <summary>
+            Cadastra uma nova Curtida
+            </summary>
+            <param name="curtida">Objeto Curtida</param>
+            <returns>Curtida Cadastrado</returns>
+        </member>
+        <member name="M:Edux_Api_EFcore.Controllers.CurtidaController.Put(Edux_Api_EFcore.Domains.Curtida)">
+            <summary>
+            Altera um determinado Curtida
+            </summary>
+            <param name="curtida">Objeto Curtida com as alterações</param>
+            <returns>Informações alteradas do Curtida </returns>
+        </member>
+        <member name="M:Edux_Api_EFcore.Controllers.CurtidaController.Delete(System.Guid)">
+            <summary>
+            Excluí um determinada Curtida
+            </summary>
+            <param name="id">ID da Curtida</param>
+            <returns>ID excluído</returns>
+        </member>
+        <member name="M:Edux_Api_EFcore.Controllers.DicaController.Get">
+            <summary>
+            Mostra todas as Dicas cadastradas
+            </summary>
+            <returns>Lista com todos as Dicas</returns>
+        </member>
+        <member name="M:Edux_Api_EFcore.Controllers.DicaController.Get(System.Guid)">
+            <summary>
+            Mostra uma única Dica especificado pelo seu ID
+            </summary>
+            <param name="id">ID da Dica</param>
+            <returns>Uma Dica</returns>
+        </member>
+        <member name="M:Edux_Api_EFcore.Controllers.DicaController.Get(System.String)">
+            <summary>
+            Mostra uma única Categoria especificado por uma PALAVRA CHAVE
+            </summary>
+            <param name="palavraChave">Objeto palavraChave</param>
+            <returns>Uma Dica</returns>
+        </member>
+        <member name="M:Edux_Api_EFcore.Controllers.DicaController.Post(Edux_Api_EFcore.Domains.Dica)">
+            <summary>
+            Cadastra uma nova Dica
+            </summary>
+            <param name="dica">Objeto Dica</param>
+            <returns>Categoria Dica</returns>
+        </member>
+        <member name="M:Edux_Api_EFcore.Controllers.DicaController.Put(Edux_Api_EFcore.Domains.Dica)">
+            <summary>
+            Altera uma determinada Dica
+            </summary>
+            <param name="dica">Objeto Dica com as alterações</param>
+            <returns>Informações alterada da Dica </returns>
+        </member>
+        <member name="M:Edux_Api_EFcore.Controllers.DicaController.Delete(System.Guid)">
+            <summary>
+            Excluí uma determinada Dica
+            </summary>
+            <param name="id">ID da Dica</param>
+            <returns>ID Excluído</returns>
+        </member>
+        <member name="M:Edux_Api_EFcore.Controllers.InstituicaoController.Get">
+            <summary>
+            Mostra todas as Instituições cadastradas
+            </summary>
+            <returns>Lista com todos as Instituições</returns>
+        </member>
+        <member name="M:Edux_Api_EFcore.Controllers.InstituicaoController.Get(System.Guid)">
+            <summary>
+            Mostra uma única Instituições especificado pelo seu ID
+            </summary>
+            <param name="id">ID da Instituição</param>
+            <returns>Uma Instituição</returns>
+        </member>
+        <member name="M:Edux_Api_EFcore.Controllers.InstituicaoController.Get(System.String)">
+            <summary>
+            Mostra uma única Categoria especificado pelo seu NOME
+            </summary>
+            <param name="nome">Objeto nome</param>
+            <returns>Uma Instituição</returns>
+        </member>
+        <member name="M:Edux_Api_EFcore.Controllers.InstituicaoController.Post(Edux_Api_EFcore.Domains.Instituicao)">
+            <summary>
+            Cadastra uma nova Instituição
+            </summary>
+            <param name="instituicao">Objeto Instituição</param>
+            <returns>Info alterada da Instituição</returns>
+        </member>
+        <member name="M:Edux_Api_EFcore.Controllers.InstituicaoController.Put(Edux_Api_EFcore.Domains.Instituicao)">
+            <summary>
+            Altera uma determinada Instituição
+            </summary>
+            <param name="instituicao">Objeto Instituição com as alterações</param>
+            <returns>Informações alterada da Inatituição</returns>
+        </member>
+        <member name="M:Edux_Api_EFcore.Controllers.InstituicaoController.Delete(System.Guid)">
+            <summary>
+            Excluí uma determinada Instituição
+            </summary>
+            <param name="id">ID da Instituição</param>
+            <returns>ID Excluído</returns>
+        </member>
+        <member name="M:Edux_Api_EFcore.Controllers.LoginController.Login(Edux_Api_EFcore.Domains.Usuario)">
+            <summary>
+            Cadastra um novo Login
+            </summary>
+            <param name="login"></param>
+            <returns>Login cadastrado</returns>
+        </member>
+        <member name="M:Edux_Api_EFcore.Controllers.ObjetivoAlunoController.Get">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Edux_Api_EFcore.Controllers.ObjetivoAlunoController.Get(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Edux_Api_EFcore.Controllers.ObjetivoAlunoController.GetPorAluno(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="idAluno"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Edux_Api_EFcore.Controllers.ObjetivoAlunoController.Post(Edux_Api_EFcore.Domains.ObjetivoAluno)">
+            <summary>
+            
+            </summary>
+            <param name="objetivoAluno"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Edux_Api_EFcore.Controllers.ObjetivoAlunoController.Put(Edux_Api_EFcore.Domains.ObjetivoAluno)">
+            <summary>
+            
+            </summary>
+            <param name="objetivoAluno"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Edux_Api_EFcore.Controllers.ObjetivoAlunoController.Delete(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Edux_Api_EFcore.Controllers.ObjetivoController.Get">
+            <summary>
+            Mostra todos os Objetivos cadastradas
+            </summary>
+            <returns>Lista com todos os Objetivos</returns>
+        </member>
+        <member name="M:Edux_Api_EFcore.Controllers.ObjetivoController.Get(System.Guid)">
+            <summary>
+            Mostra um único Objetivo especificado pelo seu ID
+            </summary>
+            <param name="Id">ID do Objetivo</param>
+            <returns>Um Objetivo</returns>
+        </member>
+        <member name="M:Edux_Api_EFcore.Controllers.ObjetivoController.Get(System.String)">
+            <summary>
+            Mostra um único Objetivo especificado pelo seu TERMO
+            </summary>
+            <param name="termo">Objeto Termo</param>
+            <returns>Um Objetivo</returns>
+        </member>
+        <member name="M:Edux_Api_EFcore.Controllers.ObjetivoController.Post(Edux_Api_EFcore.Domains.Objetivo)">
+            <summary>
+             Cadastra um novo Objetivo
+            </summary>
+            <param name="objetivo">Objeto objetivo</param>
+            <returns>Obejtivo Cadastrado</returns>
+        </member>
+        <member name="M:Edux_Api_EFcore.Controllers.ObjetivoController.Put(Edux_Api_EFcore.Domains.Objetivo)">
+            <summary>
+            Altera um determinado Objetivo
+            </summary>
+            <param name="objetivo">Objeto objetivo com as alterações</param>
+            <returns>Informações alteradas do Objetivo</returns>
+        </member>
+        <member name="M:Edux_Api_EFcore.Controllers.ObjetivoController.Delete(System.Guid)">
+            <summary>
+            Excluí um determinado Objetivo
+            </summary>
+            <param name="Id">ID do Objetivo</param>
+            <returns>ID excluído</returns>
+        </member>
+        <member name="M:Edux_Api_EFcore.Controllers.PerfilController.Get">
+            <summary>
+            Mostra todos os Perfis cadastradas
+            </summary>
+            <returns>Lista com todos os Perfis</returns>
+        </member>
+        <member name="M:Edux_Api_EFcore.Controllers.PerfilController.Get(System.Guid)">
+            <summary>
+            Mostra um único Perfil especificado pelo seu ID
+            </summary>
+            <param name="id">ID do Perfil</param>
+            <returns>Um Perfil</returns>
+        </member>
+        <member name="M:Edux_Api_EFcore.Controllers.PerfilController.Post(Edux_Api_EFcore.Domains.Perfil)">
+            <summary>
+             Cadastra um novo Perfil
+            </summary>
+            <param name="perfil">Objeto perfil</param>
+            <returns>Perfil Cadastrado</returns>
+        </member>
+        <member name="M:Edux_Api_EFcore.Controllers.PerfilController.Put(Edux_Api_EFcore.Domains.Perfil)">
+            <summary>
+            Altera um determinado Perfil
+            </summary>
+            <param name="perfil">Objeto Perfil com as alterações</param>
+            <returns>Informações alteradas do Perfil</returns>
+        </member>
+        <member name="M:Edux_Api_EFcore.Controllers.PerfilController.Delete(System.Guid)">
+            <summary>
+            Excluí um determinado Perfil
+            </summary>
+            <param name="id">ID do Perfil</param>
+            <returns>ID excluído</returns>
+        </member>
+        <member name="M:Edux_Api_EFcore.Controllers.TurmaController.Get">
+            <summary>
+            Mostra todas as Turmas cadastradas
+            </summary>
+            <returns>Lista com todas as Turmas</returns>
+        </member>
+        <member name="M:Edux_Api_EFcore.Controllers.TurmaController.Get(System.Guid)">
+            <summary>
+            Mostra uma única Turma especificado pelo seu ID
+            </summary>
+            <param name="id">ID da Turma</param>
+            <returns>Uma Turma</returns>
+        </member>
+        <member name="M:Edux_Api_EFcore.Controllers.TurmaController.Get(System.String)">
+            <summary>
+            Mostra um único Objetivo especificado pelo seu NOME
+            </summary>
+            <param name="nome">Objeto nome</param>
+            <returns>Uma Turma</returns>
+        </member>
+        <member name="M:Edux_Api_EFcore.Controllers.TurmaController.Post(Edux_Api_EFcore.Domains.Turma,System.Collections.Generic.List{Edux_Api_EFcore.Domains.ProfessorTurma},System.Collections.Generic.List{Edux_Api_EFcore.Domains.AlunoTurma})">
+            <summary>
+            Cadastra uma nova Turma
+            </summary>
+            <param name="turma">Objeto turma</param>
+            <param name="professores">Objeto professores</param>
+            <param name="alunos">Objeto alunos</param>
+            <returns>Turma Cadastrada</returns>
+        </member>
+        <member name="M:Edux_Api_EFcore.Controllers.TurmaController.Put(Edux_Api_EFcore.Domains.Turma,System.Collections.Generic.List{Edux_Api_EFcore.Domains.ProfessorTurma},System.Collections.Generic.List{Edux_Api_EFcore.Domains.AlunoTurma})">
+            <summary>
+             Altera uma determinada Tuma
+            </summary>
+            <param name="turma">Objeto turma com as alterações</param>
+            <param name="professores">Objeto professores com as alterações</param>
+            <param name="alunos">Objeto alunos com as alterações</param>
+            <returns>Informações alteradas da Turma</returns>
+        </member>
+        <member name="M:Edux_Api_EFcore.Controllers.TurmaController.Delete(System.Guid)">
+            <summary>
+            Excluí uma determinada Turma
+            </summary>
+            <param name="id">ID da Turma</param>
+            <returns>ID excluído</returns>
+        </member>
+        <member name="M:Edux_Api_EFcore.Controllers.UsuarioController.Get">
+            <summary>
+            Mostra todos os Usuários cadastradas
+            </summary>
+            <returns>Lista com todos os Usuários</returns>
+        </member>
+        <member name="M:Edux_Api_EFcore.Controllers.UsuarioController.Get(System.Guid)">
+            <summary>
+            Mostra um único Usuário especificado pelo seu ID
+            </summary>
+            <param name="id">ID do Usuário</param>
+            <returns>Um Usuário</returns>
+        </member>
+        <member name="M:Edux_Api_EFcore.Controllers.UsuarioController.Get(System.String)">
+            <summary>
+            Mostra um único Usuário especificado pelo seu NOME
+            </summary>
+            <param name="nome">Objeto Nome</param>
+            <returns>Um Usuário</returns>
+        </member>
+        <member name="M:Edux_Api_EFcore.Controllers.UsuarioController.Post(Edux_Api_EFcore.Domains.Usuario)">
+            <summary>
+            Cadastra um novo Usuário
+            </summary>
+            <param name="usuario">Objeto Usuário</param>
+            <returns>Usuário Cadastrado</returns>
+        </member>
+        <member name="M:Edux_Api_EFcore.Controllers.UsuarioController.Put(Edux_Api_EFcore.Domains.Usuario)">
+            <summary>
+            Altera um determinado Usuário
+            </summary>
+            <param name="usuario">Objeto usuario com as alterações</param>
+            <returns>Informações alteradas do Usuário</returns>
+        </member>
+        <member name="M:Edux_Api_EFcore.Controllers.UsuarioController.Delete(System.Guid)">
+            <summary>
+            Excluí um determinado Usuário
+            </summary>
+            <param name="id">ID do Usuário</param>
+            <returns>ID excluído</returns>
+        </member>
+    </members>
+</doc>

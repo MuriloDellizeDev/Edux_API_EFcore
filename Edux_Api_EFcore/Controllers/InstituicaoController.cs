@@ -24,6 +24,10 @@ namespace Edux_Api_EFcore.Controllers
         }
 
 
+        /// <summary>
+        /// Mostra todas as Instituições cadastradas
+        /// </summary>
+        /// <returns>Lista com todos as Instituições</returns>
         [Authorize(Roles = "Aluno,Professor")]
         // GET: api/<InstituicaoController>
         [HttpGet]
@@ -45,9 +49,14 @@ namespace Edux_Api_EFcore.Controllers
         }
 
 
+        /// <summary>
+        /// Mostra uma única Instituições especificado pelo seu ID
+        /// </summary>
+        /// <param name="id">ID da Instituição</param>
+        /// <returns>Uma Instituição</returns>
         [Authorize(Roles = "Professor")]
         // GET api/<InstituicaoController>/5
-        [HttpGet("{id}")]
+        [HttpGet("buscar/id/{id}")]
         public IActionResult Get(Guid id)
         {
             try
@@ -66,9 +75,15 @@ namespace Edux_Api_EFcore.Controllers
         }
 
 
+
+        /// <summary>
+        /// Mostra uma única Categoria especificado pelo seu NOME
+        /// </summary>
+        /// <param name="nome">Objeto nome</param>
+        /// <returns>Uma Instituição</returns>
         [Authorize(Roles = "Aluno,Professor")]
         // GET api/<ObjetivoController>/
-        [HttpGet("{id}")]
+        [HttpGet("buscar/nome/{nome}")]
         public IActionResult Get(string nome)
         {
             try
@@ -99,6 +114,12 @@ namespace Edux_Api_EFcore.Controllers
         }
 
 
+
+        /// <summary>
+        /// Cadastra uma nova Instituição
+        /// </summary>
+        /// <param name="instituicao">Objeto Instituição</param>
+        /// <returns>Info alterada da Instituição</returns>
         [Authorize(Roles = "Professor")]
         // POST api/<InstituicaoController>
         [HttpPost]
@@ -117,6 +138,12 @@ namespace Edux_Api_EFcore.Controllers
         }
 
 
+
+        /// <summary>
+        /// Altera uma determinada Instituição
+        /// </summary>
+        /// <param name="instituicao">Objeto Instituição com as alterações</param>
+        /// <returns>Informações alterada da Inatituição</returns>
         [Authorize(Roles = "Professor")]
         // PUT api/<InstituicaoController>/5
         [HttpPut("{id}")]
@@ -135,6 +162,11 @@ namespace Edux_Api_EFcore.Controllers
         }
 
 
+        /// <summary>
+        /// Excluí uma determinada Instituição
+        /// </summary>
+        /// <param name="id">ID da Instituição</param>
+        /// <returns>ID Excluído</returns>
         [Authorize(Roles = "Professor")]
         // DELETE api/<InstituicaoController>/5
         [HttpDelete("{id}")]
@@ -149,7 +181,7 @@ namespace Edux_Api_EFcore.Controllers
             catch (Exception ex)
             {
                 return BadRequest(ex.Message);
-            }
-        }
+            }}
+
     }
 }
