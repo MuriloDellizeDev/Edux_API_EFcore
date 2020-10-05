@@ -31,13 +31,10 @@ namespace Edux_Api_EFcore.Controllers
        }
 
        private Usuario AutenticarUsuario(Usuario login)
-       {
-           login.Senha = Criptografia.Criptografar(login.Senha, Guid.NewGuid().ToString());
-           return _ctx
-               .Usuarios
-               .Include(u => u.IdPerfil)
-               .FirstOrDefault(u => u.Email == login.Email && u.Senha == login.Senha);
-       }
+        {
+            login.Senha = Criptografia.Criptografar(login.Senha, Guid.NewGuid().ToString());
+            return _ctx.Usuarios.Include(u => u.Perfil).FirstOrDefault(u => u.Email == login.Email && u.Senha == login.Senha);
+        }
 
       private string GerarJWT(Usuario informacoesUsuario)
        {

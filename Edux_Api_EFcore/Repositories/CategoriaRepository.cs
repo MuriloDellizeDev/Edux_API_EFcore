@@ -36,11 +36,11 @@ namespace Edux_Api_EFcore.Repositories
         }
 
 
-        public Categoria BuscarPorId(Guid Id)
+        public Categoria BuscarPorId(Guid id)
         {
             try
             {
-                return _ctx.Categorias.Find(Id);
+                return _ctx.Categorias.Find(id);
             }
             catch (Exception ex)
             {
@@ -98,9 +98,11 @@ namespace Edux_Api_EFcore.Repositories
                 if (categoria == null)
                     throw new Exception("Impossível alterar Categoria pois faltam dados.");
 
+                
+
                 categoriaAlterada.Tipo = categoria.Tipo;
            
-                _ctx.Categorias.Update(categoriaAlterada);
+                _ctx.Categorias.Update(categoria);
 
                 _ctx.SaveChanges();
             }
@@ -112,11 +114,11 @@ namespace Edux_Api_EFcore.Repositories
         }
 
 
-        public void Remover(Guid Id)
+        public void Remover(Guid id)
         {
             try
             {
-               Categoria categoriaExcluida = BuscarPorId(Id);
+               Categoria categoriaExcluida = BuscarPorId(id);
 
 
                 if (categoriaExcluida == null)

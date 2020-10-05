@@ -12,5 +12,9 @@ namespace Edux_Api_EFcore.Domains
 
         ////Relacionamento com a tabela Categoria e Objetivo  1,N
         public List<Objetivo> Objetivos { get; set; }
+     
+
+
+
     }
 }

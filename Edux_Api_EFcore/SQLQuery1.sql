@@ -1,0 +1,1 @@
+﻿INSET INTO Perfil()

@@ -27,7 +27,7 @@ namespace Edux_Api_EFcore.Controllers
         /// Mostra todos os Perfis cadastradas
         /// </summary>
         /// <returns>Lista com todos os Perfis</returns>
-        [Authorize(Roles = "Professor")]
+
         // GET: api/<PerfilController>
         [HttpGet]
         public IActionResult Get()
@@ -53,9 +53,9 @@ namespace Edux_Api_EFcore.Controllers
         /// </summary>
         /// <param name="id">ID do Perfil</param>
         /// <returns>Um Perfil</returns>
-        [Authorize(Roles = "Professor")]
+
         // GET api/<PerfilController>/5
-        [HttpGet("buscar/id/{id}")]
+        [HttpGet("{id}")]
         public IActionResult Get(Guid id)
         {
             try
@@ -79,16 +79,16 @@ namespace Edux_Api_EFcore.Controllers
         /// </summary>
         /// <param name="perfil">Objeto perfil</param>
         /// <returns>Perfil Cadastrado</returns>
-        [Authorize(Roles = "Professor")]
+      
         // POST api/<PerfilController>
         [HttpPost]
-        public IActionResult Post(Perfil perfil)
+        public IActionResult Post(Perfil p)
         {
             try
             {
-                _perfilRepository.Adicionar(perfil);
-
-                return Ok(perfil);
+                _perfilRepository.Adicionar(p);
+                
+                return Ok();
             }
             catch (Exception ex)
             {
@@ -102,16 +102,16 @@ namespace Edux_Api_EFcore.Controllers
         /// </summary>
         /// <param name="perfil">Objeto Perfil com as alterações</param>
         /// <returns>Informações alteradas do Perfil</returns>
-        [Authorize(Roles = "Professor")]
+
         // PUT api/<PerfilController>/5
-        [HttpPut("{id}")]
-        public IActionResult Put([FromBody] Perfil perfil)
+        [HttpPut]
+        public IActionResult Put([FromBody] Perfil p)
         {
             try
             {
-                _perfilRepository.Editar(perfil);
+                _perfilRepository.Editar(p);
 
-                return Ok(perfil);
+                return Ok(p);
             }
             catch (Exception ex)
             {
@@ -125,7 +125,7 @@ namespace Edux_Api_EFcore.Controllers
         /// </summary>
         /// <param name="id">ID do Perfil</param>
         /// <returns>ID excluído</returns>
-        [Authorize(Roles = "Professor")]
+
         // DELETE api/<PerfilController>/5
         [HttpDelete("{id}")]
         public IActionResult Delete(Guid id)

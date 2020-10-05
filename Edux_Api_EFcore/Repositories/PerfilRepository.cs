@@ -38,7 +38,7 @@ namespace Edux_Api_EFcore.Repositories
         {
             try
             {
-                return _ctx.Perfis.Find(id);
+                return _ctx.Perfis.FirstOrDefault(p => p.Id == id);
             }
             catch (Exception ex)
             {
@@ -73,7 +73,19 @@ namespace Edux_Api_EFcore.Repositories
             try
             {
 
-                Perfil perfilTemp = _ctx.Perfis.Find(p.Id);
+                Perfil perfilTemp = BuscarPorId(p.Id);
+
+                if (perfilTemp == null)
+                {
+                    throw new Exception("Perfil não encontrado.");
+                }
+
+                perfilTemp.Permissao = p.Permissao;
+
+                _ctx.Perfis.Update(perfilTemp);
+                _ctx.SaveChanges();
+
+                /*Perfil perfilTemp = _ctx.Perfis.Find(p.Id);
                 if (perfilTemp == null)
                 {
                     throw new Exception("Perfil não encontrado.");
@@ -81,7 +93,7 @@ namespace Edux_Api_EFcore.Repositories
                 perfilTemp.Permissao = p.Permissao;
 
                 _ctx.Perfis.Update(perfilTemp);
-                _ctx.SaveChanges();
+                _ctx.SaveChanges();*/
             }
             catch (Exception ex)
             {

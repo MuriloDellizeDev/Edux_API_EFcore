@@ -11,7 +11,7 @@ namespace Edux_Api_EFcore.Interfaces
 
         List<Categoria> Listar();
 
-        Categoria BuscarPorId(Guid Id);
+        Categoria BuscarPorId(Guid id);
 
         List<Categoria> BuscarPorTipo(string tipo);
 
@@ -19,7 +19,7 @@ namespace Edux_Api_EFcore.Interfaces
 
         void Editar(Categoria categoria);
 
-        void Remover(Guid Id);
+        void Remover(Guid id);
 
 
 

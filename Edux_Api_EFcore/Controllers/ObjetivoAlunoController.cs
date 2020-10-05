@@ -162,7 +162,7 @@ namespace Edux_Api_EFcore.Controllers
         /// Exclui um determinado ObjetivoAluno
         /// </summary>
         /// <param name="id">Id do ObjetivoAluno a ser excluído</param>
-        /// <returns>StatusCodes e </returns>
+        /// <returns>StatusCodes</returns>
         // DELETE api/<ObjetivoAlunoController>/5
         [Authorize(Roles = "Professor")]
         [HttpDelete("{id}")]

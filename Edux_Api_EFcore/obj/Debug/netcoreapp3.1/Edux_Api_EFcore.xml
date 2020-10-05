@@ -14,7 +14,7 @@
             <summary>
             Mostra uma única Categoria especificado pelo seu ID
             </summary>
-            <param name="Id">ID da Categoria</param>
+            <param name="id">ID da Categoria</param>
             <returns>Uma Categoria</returns>
         </member>
         <member name="M:Edux_Api_EFcore.Controllers.CategoriaController.Get(System.String)">
@@ -248,7 +248,7 @@
             Exclui um determinado ObjetivoAluno
             </summary>
             <param name="id">Id do ObjetivoAluno a ser excluído</param>
-            <returns>StatusCodes e </returns>
+            <returns>StatusCodes</returns>
         </member>
         <member name="M:Edux_Api_EFcore.Controllers.ObjetivoController.Get">
             <summary>

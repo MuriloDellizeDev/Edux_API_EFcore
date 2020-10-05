@@ -87,7 +87,7 @@ namespace Edux_Api_EFcore.Controllers
         /// <returns>Uma Dica</returns>
         [Authorize(Roles = "Aluno,Professor")]
         // GET: api/<DicaController>/buscar/termo/desenvolvimento
-        [HttpGet("buscar/termo/{termo}")]
+        [HttpGet("buscar/palavra_chave/{palavraChave}")]
         public IActionResult Get(string palavraChave)
         {
             try
